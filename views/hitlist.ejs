@@ -77,7 +77,11 @@
     </button>
     
     <div class="floating-text">
-        <h2><%= user.userName %> has <%= numEntries %> companies listed</h2>
+        <% if (numEntries >= 1 && numEntries < 2 ) { %>
+        <h2><%= user.userName %> has <%= numEntries %> company listed</h2>
+            <%} else { %>
+                <h2><%= user.userName %> has <%= numEntries %> companies listed</h2>
+            <% } %>
     </div>
 
     <a href="/logout">Logout</a>
