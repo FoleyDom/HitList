@@ -33,10 +33,6 @@
                 <span><%= entry.source %> </span>
                 <span><%= moment(entry.dateAdded).format('MM/DD/YYYY') %> </span>
                 <a href="/hitlist/updateEntry/<%= entry._id %> " class="btn">Edit</a>
-                <form action="/hitlist/deleteEntry/<%= entry._id %>" method="post">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="delete-btn">&times;</button>
-                </form>
             </div>
         </div>
     <% }) %>    
@@ -77,11 +73,7 @@
     </button>
     
     <div class="floating-text">
-        <% if (numEntries >= 1 && numEntries < 2 ) { %>
-        <h2><%= user.userName %> has <%= numEntries %> company listed</h2>
-            <%} else { %>
-                <h2><%= user.userName %> has <%= numEntries %> companies listed</h2>
-            <% } %>
+        <h2><%= user.userName %> has <%= numEntries %> compan<%= entries.length === 1? "y": "ies" %>  listed</h2>
     </div>
 
     <a href="/logout">Logout</a>
