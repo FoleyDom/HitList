@@ -52,7 +52,7 @@ const User = require('../models/User')
       return res.redirect('/hitlist')
     }
     res.render('signup', {
-      title: 'Create Account'
+      title: 'Create an Account'
     })
   }
   
@@ -76,7 +76,7 @@ const User = require('../models/User')
   
     User.findOne({$or: [
       {email: req.body.email},
-      {userName: req.body.userName}
+      {userName: req.body.f}
     ]}, (err, existingUser) => {
       if (err) { return next(err) }
       if (existingUser) {

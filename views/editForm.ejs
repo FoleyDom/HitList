@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script defer src="https://kit.fontawesome.com/80331bb8c5.js" crossorigin="anonymous"></script>
-</head>
-<body>
+<%- include('./layout/header.ejs') -%> 
 
   <div class="vertical">
 
@@ -38,14 +27,16 @@
       <input type="text" name="source" value="<%= entry.source %>">
 
       <button type="submit" class="btn">Update</button>
+
+      <a href="/" class="btn cancel">Cancel</a>
+
     </form>
 
     <form class="vertical" action="/hitlist/deleteEntry/<%= entry._id %>" method="post">
       <input type="hidden" name="_method" value="DELETE">
       <button type="submit" class="btn delete-btn">Delete</button>
     </form>
-
+    
   </div>
 
-</body>
-</html>
+  <%- include('./layout/footer.ejs') -%> 

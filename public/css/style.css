@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 .completed{
     text-decoration: line-through;
@@ -34,9 +34,13 @@ p {
   text-decoration: line-through;
 }
 
-form > * {
+form > *,
+.wrapper.vertical > * {
   width: 20em;
   margin: 5px;
+}
+.wrapper.vertical .btn {
+	text-align: center;
 }
 
 form > input {
@@ -44,6 +48,8 @@ form > input {
   border-radius: 5px;
   height: 30px;
   margin-top: 0;
+  padding: 15px;
+  font-size: 16px;
 }
 
 .vertical {
@@ -123,6 +129,20 @@ h6.to-bottom {
 	letter-spacing: 1px;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.cancel{
+	text-align: center;
+	background-color: #7175da;
+	color: #2A265F;
+	font-weight: bold;
+	transition: background-color 0.5s, color 0.5s;
+}
+
+.cancel:hover{
+	background-color: #2A265F;
+	color: #fff;
+	font-weight: normal;
 }
 
 .btn-low-right {

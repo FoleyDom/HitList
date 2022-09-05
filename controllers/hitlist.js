@@ -7,14 +7,14 @@ module.exports = {
     try{
       const entryItems = await Hitlist.find({userId:req.user.id})
       //const entryTotal = await Hitlist.countDocuments()
-      res.render('hitlist.ejs', {entries: entryItems, numEntries: entryItems.length, moment, user: req.user})
+      res.render('hitlist.ejs', {entries: entryItems, numEntries: entryItems.length, moment, user: req.user, title: "Hitlist"})
     }catch(err){
       console.log(err)
     }
   },
   getEntry: (req, res)=>{
     console.log(req.user);
-    res.render('form.ejs')
+    res.render('form.ejs', {title: "Add resources"})
   },
   postEntry: async (req, res)=>{
     try{
@@ -35,7 +35,7 @@ module.exports = {
   getEntryToEdit: async (req, res)=>{
     try {
       const singleEntry = await Hitlist.findById(req.params.id)
-      res.render('editForm', {entry: singleEntry, moment})
+      res.render('editForm', {entry: singleEntry, moment, title: "Update your Hitlist"})
     } catch (err) {
       console.error(err)
     }
@@ -49,7 +49,6 @@ module.exports = {
     }
   },
   deleteEntry: async (req, res)=>{
-    console.log(req.body.todoIdFromJSFile)
     try{
       await Hitlist.findByIdAndDelete(req.params.id)
       res.redirect('/hitlist')

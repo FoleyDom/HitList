@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script defer src="https://kit.fontawesome.com/80331bb8c5.js" crossorigin="anonymous"></script>
-</head>
-<body>
+<%- include('./layout/header.ejs') -%> 
+
 
   <div class="vertical">
 
@@ -37,8 +27,9 @@
       <input type="text" name="source" placeholder="Enter Source">
 
       <button type="submit" class="btn">Submit</button>
+
+      <a href="/" class="btn cancel">Cancel</a>
     </form>
   </div>
 
-</body>
-</html>
+  <%- include('./layout/footer.ejs') -%> 

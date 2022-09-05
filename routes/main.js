@@ -5,9 +5,12 @@ const homeController = require('../controllers/home')
 const { ensureGuest } = require('../middleware/auth')
 
 router.get('/', ensureGuest, homeController.getIndex)
+
 router.get('/login', ensureGuest, authController.getLogin)
 router.post('/login', authController.postLogin)
+
 router.get('/logout', authController.logout)
+
 router.get('/signup', ensureGuest, authController.getSignup)
 router.post('/signup', authController.postSignup)
 

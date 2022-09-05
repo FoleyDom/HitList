@@ -14,6 +14,4 @@ router.put('/updateEntry/:id', hitlistController.putEntry)
 router.delete('/deleteEntry/:id', hitlistController.deleteEntry)
 
 
-
-
 module.exports = router
