@@ -19,10 +19,15 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
+    <form class="vertical" action="/login" method="POST">
+
+      <label for="email">Email</label>
+      <input type="email" name="email">
+
+      <label for="password">Password</label>
+      <input type="password" name="password">
+
+      <button class="btn" type="submit">Submit</button>
     </form>
 </body>
 </html>

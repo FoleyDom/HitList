@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script defer src="https://kit.fontawesome.com/80331bb8c5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Company Followup List</h1>
-    <a href="/hitlist/addEntry">add entry</a>
+    <a class="btn" href="/hitlist/addEntry">add entry</a>
     <div class="list-container">
     <% entries.forEach( entry => { %>
         <div class="company-card">
@@ -21,18 +21,14 @@
                 <a href="<%= entry.url %>">Company Website <i class="fa-solid fa-chevron-right"></i></a>
             </div>
             <div class="company-info">
-                <!-- <div class="progress-container">
-                    <div class="progress"></div>
-                    <span class="progress-text">
-                        2/3 connections
-                    </span>
-                </div> -->
                 <h6>Position type: <%= entry.typeOfPosition %></h6>
                 <h2><%= entry.rolePosition %></h2>
                 <!-- missing format -->
+                <h6 class="to-bottom">Found on 
                 <span><%= entry.source %> </span>
                 <span><%= moment(entry.dateAdded).format('MM/DD/YYYY') %> </span>
-                <a href="/hitlist/updateEntry/<%= entry._id %> " class="btn">Edit</a>
+                </h6>
+                <a href="/hitlist/updateEntry/<%= entry._id %> " class="btn btn-low-right">Edit</a>
             </div>
         </div>
     <% }) %>    
@@ -76,7 +72,7 @@
         <h2><%= user.userName %> has <%= numEntries %> compan<%= entries.length === 1? "y": "ies" %>  listed</h2>
     </div>
 
-    <a href="/logout">Logout</a>
+    <a class="btn" href="/logout">Logout</a>
 
     <script src="js/main.js"></script>
 </body>

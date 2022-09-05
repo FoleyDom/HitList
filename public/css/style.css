@@ -22,9 +22,40 @@ body {
 	margin: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
+p {
+  color: darkslateblue;
+}
+
+.crossout {
+  text-decoration: line-through;
+}
+
+form > * {
+  width: 20em;
+  margin: 5px;
+}
+
+form > input {
+  border: 3px inset #7175da;
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 0;
+}
+
+.vertical {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
 .list-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-content: space-around;
 }
@@ -45,6 +76,12 @@ body {
 	margin: 0;
 	letter-spacing: 1px;
 	text-transform: uppercase;
+}
+
+h6.to-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
 }
 
 .company-card h2 {
@@ -74,69 +111,42 @@ body {
 	width: 100%;
 }
 
-.progress-container {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	text-align: right;
-	width: 150px;
-}
-
-.progress {
-	background-color: #ddd;
-	border-radius: 3px;
-	height: 5px;
-	width: 100%;
-}
-
-.progress::after {
-	border-radius: 3px;
-	background-color: #2A265F;
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 5px;
-	width: 66%;
-}
-
-.progress-text {
-	font-size: 10px;
-	opacity: 0.6;
-	letter-spacing: 1px;
-}
-
 .btn {
+  border: 3px solid #2A265F;
 	background-color: #2A265F;
-	border: 0;
 	border-radius: 50px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	color: #fff;
 	font-size: 16px;
-	padding: 12px 25px;
-	position: absolute;
-	bottom: 30px;
-	right: 30px;
+  margin: 10px;
+	padding: 10px 25px;
 	letter-spacing: 1px;
 	text-decoration: none;
 	cursor: pointer;
 }
 
+.btn-low-right {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+.btn-center {
+  margin-top: 18px;
+}
+
 /* need to properly style */
 .delete-btn{
-	position: absolute;
-	top: 8px;
-	right: 8px;
-	width:30px;
-  	height:30px;
-	border: 2px solid #E91E63;
-	border-radius: 50%;
-	cursor:pointer;
-	background:transparent;
-	font-size: 20px;
-	line-height: 20px;
-	color: #E91E63;
-	font-weight: bold;
+  color:#2A265F;
+  font-weight: bold;
+  background-color: #7175da;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+  color: #fff;
+  border-color: darkred;
 }
 
 /* SOCIAL PANEL CSS */
@@ -291,9 +301,8 @@ body {
 	z-index: 998;
 }
 
-.floating-text a {
-	color: #FF7500;
-	text-decoration: none;
+.floating-text h2 {
+	margin: 12px;
 }
 
 @media screen and (max-width: 480px) {
