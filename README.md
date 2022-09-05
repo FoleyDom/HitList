@@ -4,7 +4,7 @@ Write a short sentence or two about this project and what it does. Be sure to in
 
 **Link to project:** https://hitlist100devs.herokuapp.com/
 
-![alt tag](https://media.giphy.com/media/pjwl6fPyYQC874ZBKY/giphy-downsized-large.gif)
+![alt tag](https://github.com/Mauro-Colucci/Mauro-Colucci/raw/main/hitlistApp.gif)
 
 ## How It's Made:
 
