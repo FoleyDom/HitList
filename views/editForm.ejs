@@ -1,0 +1,42 @@
+<%- include('./layout/header.ejs') %> 
+
+  <div class="vertical">
+
+    <h2>Update your hitlist entry</h2>
+    <p class="lead">Write it, cut it, paste it, save it, load it, check it, quick rewrite it</p>
+
+    <form class="vertical" action="/hitlist/updateEntry/<%= entry._id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+
+      <label for="companyName" class="form-label">Company Name</label>
+      <input type="text" name="companyName" value="<%= entry.companyName %>">
+
+      <label for="dateAdded">Date Added</label>
+      <input type="date" name="dateAdded" value="<%= moment(entry.dateAdded).format('YYYY-MM-DD') %>"">
+
+      <label for="url">URL</label>
+      <input type="text" name="url" value="<%= entry.url %>">
+
+      <label for="rolePosition">Role/Position</label>
+      <input type="text" name="rolePosition" value="<%= entry.rolePosition %>">
+
+      <label for="typeOfPosition">Type of position</label>
+      <input type="text" name="typeOfPosition" value="<%= entry.typeOfPosition %>">
+
+      <label for="source">Source</label>
+      <input type="text" name="source" value="<%= entry.source %>">
+
+      <button type="submit" class="btn">Update</button>
+
+      <a href="/" class="btn cancel">Cancel</a>
+
+    </form>
+
+    <form class="vertical" action="/hitlist/deleteEntry/<%= entry._id %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn delete-btn">Delete</button>
+    </form>
+    
+  </div>
+
+  <%- include('./layout/footer.ejs') %> 

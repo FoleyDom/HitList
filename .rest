@@ -1,0 +1,50 @@
+POST http://localhost:8080/signup
+content-type: application/json
+
+{
+    "userName": "mauro",
+    "email": "demo@demo.com",
+    "password": "123456789"
+}
+###
+POST http://localhost:8080/login
+content-type: application/json
+
+{
+    "email": "demo@demo.com",
+    "password": "123456789"
+}
+
+
+###
+post http://localhost:8080/hitlist/addEntry
+content-Type: application/json
+
+{
+    "companyName": "new company test",
+    "url": "www.github.com",
+    "rolePosition":" req.body.rolePosition",
+    "typeOfPosition": "req.body.typeOfPosition",
+    "source": "req.body.source"
+}
+
+
+###
+put http://localhost:8080/hitlist/updateEntry/6312222445ea921914e0e15d
+content-Type: application/json
+
+{
+    "companyName": "test1 saturday"
+}
+
+###
+delete http://localhost:8080/hitlist/deleteEntry/63117c9d2a641c3da0dffba4
+content-Type: application/json
+
+###
+get http://localhost:8080/hitlist
+content-Type: application/json
+
+###
+get http://localhost:8080/hitlist/updateEntry/631392e01f50c24f141dff5a
+content-Type: application/json

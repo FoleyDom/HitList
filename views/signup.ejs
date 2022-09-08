@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<%- include('./layout/header.ejs') %> 
+
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/signup" method="POST">
-        <input type="text" name="userName" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <input type="submit">
+    <form class="vertical" action="/signup" method="POST">
+
+      <label for="userName">Username</label>
+      <input type="text" name="userName" placeholder="Bob Bobberson">
+
+      <label for="email">Email</label>
+      <input type="email" name="email" placeholder="Bob@bobby.web">
+
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Not 'password1'">
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" name="confirmPassword" placeholder="Now type it again">
+
+      <button class="btn" type="submit">Submit</button>
     </form>
-</body>
-</html>
+
+<%- include('./layout/footer.ejs') %> 

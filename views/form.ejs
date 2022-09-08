@@ -1,0 +1,35 @@
+<%- include('./layout/header.ejs') %> 
+
+
+  <div class="vertical">
+
+    <h2>Add your hitlist entry</h2>
+    <p class="lead">So many people to <span class="crossout">stalk</span> network with!</p>
+
+    <form class="vertical" action="/hitlist/addEntry" method="POST">
+
+      <label for="companyName">Company Name</label>
+      <input type="text" name="companyName" placeholder="Company Name">
+
+      <label for="dateAdded">Date Added</label>
+      <input type="date" name="dateAdded">
+
+      <label for="url">URL</label>
+      <input type="text" name="url" placeholder="Enter URL">
+
+      <label for="rolePosition">Role/Position</label>
+      <input type="text" name="rolePosition" placeholder="Enter Role/Position">
+
+      <label for="typeOfPosition">Type of position</label>
+      <input type="text" name="typeOfPosition" placeholder="Enter Type of position">
+
+      <label for="source">Source</label>
+      <input type="text" name="source" placeholder="Enter Source">
+
+      <button type="submit" class="btn">Submit</button>
+
+      <a href="/" class="btn cancel">Cancel</a>
+    </form>
+  </div>
+
+  <%- include('./layout/footer.ejs') %> 

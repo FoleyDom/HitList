@@ -1,0 +1,69 @@
+<%- include('./layout/header.ejs') %> 
+
+    <h1>Company Followup List</h1>
+    <a class="btn" href="/hitlist/addEntry">add entry</a>
+    <div class="list-container">
+    <% entries.forEach( entry => { %>
+        <div class="company-card">
+            <div class="company-preview">
+                <h6>Company</h6>
+                <h2><%= entry.companyName %></h2>
+                <a href="<%= entry.url %>">Company Website <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <div class="company-info">
+                <h6>Position type: <%= entry.typeOfPosition %></h6>
+                <h2><%= entry.rolePosition %></h2>
+                <!-- missing format -->
+                <h6 class="to-bottom">Found on 
+                <span><%= entry.source %> </span>
+                <span><%= moment(entry.dateAdded).format('MM/DD/YYYY') %> </span>
+                </h6>
+                <a href="/hitlist/updateEntry/<%= entry._id %> " class="btn btn-low-right">Edit</a>
+            </div>
+        </div>
+    <% }) %>    
+    </div>
+    
+    <!-- SOCIAL PANEL HTML -->
+    <div class="social-panel-container">
+        <div class="social-panel">
+           
+            <button class="close-btn"><i class="fa-solid fa-circle-xmark"></i></button>
+            <h4>Get in touch on...</h4>
+            <ul>
+                <li>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button class="floating-btn">
+        Get in Touch
+    </button>
+    
+    <div class="floating-text">
+        <h2><%= user.userName %> has <%= numEntries %> compan<%= entries.length === 1? "y": "ies" %>  listed</h2>
+    </div>
+
+    <a class="btn logout" href="/logout">Logout</a>
+
+    <script src="js/main.js"></script>
+
+<%- include('./layout/footer.ejs') %> 
